@@ -14,9 +14,8 @@ Pastel is a simple library to help you colorize strings in your terminal.
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/pastel-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/pastel-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/pastel-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/pastel-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/pastel-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/pastel-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/pastel-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/pastel-feedstock)
 
 Current release info
 ====================
