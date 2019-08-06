@@ -1,8 +1,8 @@
 {% set name = "pastel" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "3108af417ec0fa6d0a620e676ec4f02c839ca13e10611586e5d2174b46aa0bc3" %}
+{% set hash_value = "bf3b1901b2442ea0d8ab9a390594e5b0c9584709d543a3113506fe8b28cbace3" %}
 
 package:
   name: '{{ name|lower }}'
@@ -15,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
