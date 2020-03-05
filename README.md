@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Bring colors to your terminal.
+Summary: Bring colors to your terminal
 
 Pastel is a simple library to help you colorize strings in your terminal.
 
