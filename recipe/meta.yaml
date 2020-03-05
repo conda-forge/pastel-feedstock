@@ -1,27 +1,26 @@
-{% set name = "pastel" %}
-{% set version = "0.1.0" %}
-{% set file_ext = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "3108af417ec0fa6d0a620e676ec4f02c839ca13e10611586e5d2174b46aa0bc3" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: pastel
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  '{{ hash_type }}': '{{ hash_value }}'
+  url: https://pypi.io/packages/source/p/pastel/pastel-{{ version }}.tar.gz
+  sha256: 46155fc523bdd4efcd450bbcb3f2b94a6e3b25edc0eb493e081104ad09e1ca36
 
 build:
+  number: 0
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script:
+    # pastel cannot depend on itself via poetry
+    - rm -f pyproject.toml
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
     - pip
+    # - poetry >=1.0.0
   run:
     - python
 
@@ -33,8 +32,8 @@ about:
   home: https://github.com/sdispater/pastel
   license: MIT
   license_family: MIT
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: Bring colors to your terminal.
+  license_file: LICENSE
+  summary: Bring colors to your terminal
   description: "Pastel is a simple library to help you colorize strings in your terminal."
   doc_url: https://pypi.org/project/pastel/
   dev_url: https://github.com/sdispater/pastel
