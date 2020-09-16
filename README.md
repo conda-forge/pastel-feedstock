@@ -5,7 +5,7 @@ Home: https://github.com/sdispater/pastel
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Bring colors to your terminal
 
