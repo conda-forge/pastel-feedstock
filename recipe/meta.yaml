@@ -11,7 +11,7 @@ source:
     - 0001-remove-tests-package.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     # pastel cannot depend on itself via poetry
