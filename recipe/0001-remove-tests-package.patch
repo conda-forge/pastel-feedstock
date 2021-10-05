@@ -1,0 +1,11 @@
+--- setup.py	2021-02-25 08:15:42.853488392 -0500
++++ setup.py	2021-02-25 08:16:08.649508253 -0500
+@@ -2,7 +2,7 @@
+ from setuptools import setup
+ 
+ packages = \
+-['pastel', 'tests']
++['pastel']
+ 
+ package_data = \
+ {'': ['*']}

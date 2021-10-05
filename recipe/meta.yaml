@@ -7,26 +7,33 @@ package:
 source:
   url: https://pypi.io/packages/source/p/pastel/pastel-{{ version }}.tar.gz
   sha256: 46155fc523bdd4efcd450bbcb3f2b94a6e3b25edc0eb493e081104ad09e1ca36
+  patches:
+    - 0001-remove-tests-package.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     # pastel cannot depend on itself via poetry
     - rm -f pyproject.toml
+    # Causes ClobberWarnings. Remove after https://github.com/sdispater/pastel/issues/7
+    - {{ PYTHON }} -c '__import__("shutil").rmtree("tests")'
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=2.7
     - pip
-    # - poetry >=1.0.0
   run:
-    - python
+    - python >=2.7
 
 test:
+  requires:
+    - pip
   imports:
     - pastel
+  commands:
+    - pip check
 
 about:
   home: https://github.com/sdispater/pastel
